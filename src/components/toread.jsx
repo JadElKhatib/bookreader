@@ -10,6 +10,7 @@ export function ToRead(props) {
         const newToReadList = toReadList.filter((book) => {
             return book.key !== info.key;
         })
+        localStorage.setItem("toReadList", JSON.stringify(newToReadList));
         setToReadList(newToReadList);
     }
     return (

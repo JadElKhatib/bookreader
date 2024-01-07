@@ -10,6 +10,7 @@ export function Read(props) {
         const newReadList = readList.filter((book) => {
             return book.key !== info.key;
         })
+        localStorage.setItem("readList", JSON.stringify(newReadList));
         setReadList(newReadList);
     }
     return (

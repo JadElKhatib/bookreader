@@ -7,10 +7,11 @@ export function CurrentlyReading(props) {
     const setCurReadList = props.setCurReadList;
 
     const remove = (info) => {
-        const newReadList = curReadList.filter((book) => {
+        const newCurReadList = curReadList.filter((book) => {
             return book.key !== info.key;
         })
-        setCurReadList(newReadList);
+        localStorage.setItem("curReadList", JSON.stringify(newCurReadList));
+        setCurReadList(newCurReadList);
     }
     return (
         <>

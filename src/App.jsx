@@ -29,9 +29,13 @@ const pages = [
 const App = () => {
   const [mode, setMode] = useState('');
 
-  const [readList, setReadList] = useState([]);
-  const [toReadList, setToReadList] = useState([]);
-  const [curReadList, setCurReadList] = useState([]);
+  const savedReadList = localStorage.getItem("readList") ? JSON.parse(localStorage.getItem("readList")) : [] 
+  const savedToReadList = localStorage.getItem("toReadList") ? JSON.parse(localStorage.getItem("toReadList")) : [] 
+  const savedCurReadList = localStorage.getItem("curReadList") ? JSON.parse(localStorage.getItem("curReadList")) : [] 
+
+  const [readList, setReadList] = useState(savedReadList);
+  const [toReadList, setToReadList] = useState(savedToReadList);
+  const [curReadList, setCurReadList] = useState(savedCurReadList);
 
   return (
     <>

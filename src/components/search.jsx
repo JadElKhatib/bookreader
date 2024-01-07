@@ -35,6 +35,7 @@ export function Search(props) {
         if (!newReadList.includes(info)) {
             newReadList.push(info);
         }
+        localStorage.setItem("readList", JSON.stringify(newReadList));
         setReadList(newReadList);
     }
 
@@ -43,6 +44,7 @@ export function Search(props) {
         if (!newToReadList.includes(info)) {
             newToReadList.push(info);
         }
+        localStorage.setItem("toReadList", JSON.stringify(newToReadList));
         setToReadList(newToReadList);
     }
 
@@ -51,6 +53,7 @@ export function Search(props) {
         if (!newCurReadList.includes(info)) {
             newCurReadList.push(info);
         }
+        localStorage.setItem("curReadList", JSON.stringify(newCurReadList));
         setCurReadList(newCurReadList);
     }
 
