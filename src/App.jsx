@@ -50,10 +50,10 @@ const App = () => {
           )}
         />
         <div>
-          {mode === 'search' && <Search readList={readList} toReadList={toReadList} curReadList={curReadList} setReadList={setReadList} setToReadList={setToReadList} setCurReadList={setCurReadList} />}
-          {mode === 'read' && <Read />}
-          {mode === 'toread' && <ToRead />}
-          {mode === 'currentlyreading' && <CurrentlyReading />}
+          {mode === 'search' && <Search readList={readList} toReadList={toReadList} curReadList={curReadList} setReadList={setReadList} setToReadList={setToReadList} setCurReadList={setCurReadList}/>}
+          {mode === 'read' && <Read readList={readList} setReadList={setReadList}/>}
+          {mode === 'toread' && <ToRead toReadList={toReadList} setToReadList={setToReadList}/>}
+          {mode === 'currentlyreading' && <CurrentlyReading curReadList={curReadList} setCurReadList={setCurReadList}/>}
         </div>
       </Flex>
     </>
